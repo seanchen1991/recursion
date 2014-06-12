@@ -6,6 +6,6 @@ var parseJSON = function(json) {
   if (json === "") {
   	json = '""';
   }
-  eval("var p =" + json + ";");
-  return p;
+  eval("var parsed =" + json + ";");
+  return parsed;
 };

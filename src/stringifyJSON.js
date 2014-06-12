@@ -19,7 +19,7 @@ var stringifyJSON = function(obj) {
   	for (n in obj) {
   		v = obj[n];
   		t = typeof v;
-      if (n === "functions" || undefined) { 
+      if (n === "functions" || undefined) {  //stringifyJSON does not work on functions or undefined values
         return '{}'; 
   		} else if (t == "string") {
   			v = '"' + v + '"';
