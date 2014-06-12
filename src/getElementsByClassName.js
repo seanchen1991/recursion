@@ -6,12 +6,12 @@
 // But instead we're going to implement it from scratch:
 
 var getElementsByClassName = function(className) {
-  var nodeList = [];
-  checkNodes(document.childNodes);
+  var nodeList = [];  //NodeList objects are collections of nodes such as those returned by Node.childNodes
+  checkNodes(document.childNodes);  //Document.body returns the body or frameset node of the current document, or null if no such element exists
 
   function hasClass(node) {
     var foundClass = false;
-    if (node.classList) {
+    if (node.classList) {  //classList returns a token list of the class attribute of the element
       _.each(node.classList, function(element) {
         if (className == element) {
           foundClass = true;
@@ -26,7 +26,7 @@ var getElementsByClassName = function(className) {
       if (hasClass(child)) {
         nodeList.push(child);
       }
-      if (child.childNodes) {
+      if (child.childNodes) {  //childNodes returns a collection of child nodes of the given element
         checkNodes(child.childNodes);
       } 
     })
